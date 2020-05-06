@@ -2,8 +2,8 @@ package com.huitongjy.elastic.job.spring.annotation;
 
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
+import com.google.common.base.Strings;
 import com.huitongjy.elastic.job.spring.properties.ZookeeperConfigProperties;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -24,6 +24,11 @@ public class ZookeeperBeanDefinitionRegistrar implements ImportBeanDefinitionReg
     private Environment environment;
 
     @Override
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
+    @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         //Register Zookeeper Config Beans.
         ZookeeperConfigProperties zkConfigProperties = parseZookeeperConfig((ConfigurableEnvironment) environment);
@@ -37,20 +42,21 @@ public class ZookeeperBeanDefinitionRegistrar implements ImportBeanDefinitionReg
     }
 
     private ZookeeperConfigProperties parseZookeeperConfig(ConfigurableEnvironment environment) {
-        if (StringUtils.isEmpty("elastic.job.lite.config.zookeeper.id") || StringUtils.isEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.server-lists"))) {
+        if (Strings.isNullOrEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.id"))
+                || Strings.isNullOrEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.server-lists"))) {
             return null;
         }
         ZookeeperConfigProperties result = new ZookeeperConfigProperties();
         result.setId(environment.getProperty("elastic.job.lite.config.zookeeper.id"));
         result.setServerLists(environment.getProperty("elastic.job.lite.config.zookeeper.server-lists"));
         result.setNamespace(environment.getProperty("elastic.job.lite.config.zookeeper.namespace"));
-        if (StringUtils.isNotEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.base-sleep-time-milliseconds"))) {
+        if (Strings.isNullOrEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.base-sleep-time-milliseconds"))) {
             result.setBaseSleepTimeMilliseconds(environment.getProperty("elastic.job.lite.config.zookeeper.base-sleep-time-milliseconds", Integer.class));
         }
-        if (StringUtils.isNotEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.max-sleep-time-milliseconds"))) {
+        if (Strings.isNullOrEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.max-sleep-time-milliseconds"))) {
             result.setMaxSleepTimeMilliseconds(environment.getProperty("elastic.job.lite.config.zookeeper.max-sleep-time-milliseconds", Integer.class));
         }
-        if (StringUtils.isNotEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.max-retries"))) {
+        if (Strings.isNullOrEmpty(environment.getProperty("elastic.job.lite.config.zookeeper.max-retries"))) {
             result.setMaxRetries(environment.getProperty("elastic.job.lite.config.zookeeper.max-retries", Integer.class));
         }
         return result;
@@ -80,10 +86,5 @@ public class ZookeeperBeanDefinitionRegistrar implements ImportBeanDefinitionReg
         if (null != propertyValue) {
             factory.addPropertyValue(propertyName, propertyValue);
         }
-    }
-
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
     }
 }
