@@ -54,7 +54,7 @@
    可以在根据环境配置来分别配置，同时也兼容ElasticJob原有的`Java API`与`XML`配置。
   ````
     elastic.job.lite.config.zookeeper.id=regCenter
-    elastic.job.lite.config.zookeeper.server-lists=${dubbo.registry.address}
+    elastic.job.lite.config.zookeeper.server-lists=localhost:2181
     elastic.job.lite.config.zookeeper.namespace=exambase-elastic-job-dev
     elastic.job.lite.config.zookeeper.base-sleep-time-milliseconds=1000
     elastic.job.lite.config.zookeeper.max-sleep-time-milliseconds=3000

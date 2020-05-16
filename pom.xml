@@ -197,7 +197,7 @@
     <distributionManagement>
         <!-- 这里的ID一定要在maven setting文件中存在于server下的ID, URL替换为私服地址 -->
         <snapshotRepository>
-            <id>Thirdparty</id>
+            <id>thirdparty</id>
             <name>Third Party Snapshot Repository</name>
             <url>http://127.0.0.1:8081/nexus/content/repositories/snapshot/thirdparty</url>
             <layout>default</layout>
