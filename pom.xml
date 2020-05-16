@@ -15,9 +15,9 @@
     </modules>
 
     <scm>
-        <url></url>
-        <connection></connection>
-        <developerConnection></developerConnection>
+        <url>https://github.com/kekerzzZ/elastic-job-lite-spring-project</url>
+        <connection>scm:git:git:////github.com/kekerzzZ/elastic-job-lite-spring-project.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/kekerzzZ/elastic-job-lite-spring-project.git</developerConnection>
     </scm>
 
     <developers>
