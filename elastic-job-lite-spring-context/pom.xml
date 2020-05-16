@@ -6,13 +6,13 @@
     <parent>
         <artifactId>elastic-job-lite-spring-project</artifactId>
         <groupId>com.huitongjy.elasticjob.spring</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>elastic-job-lite-spring-context</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Elastic Job Lite Spring Context</name>
     <packaging>jar</packaging>
 
@@ -30,12 +30,6 @@
     </build>
 
     <dependencies>
-        <!-- Servlet -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-
         <!-- Elastic Job Lite -->
         <dependency>
             <groupId>com.dangdang</groupId>
@@ -47,18 +41,6 @@
             <artifactId>elastic-job-lite-spring</artifactId>
         </dependency>
 
-        <!-- snake yaml -->
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-        </dependency>
-
-        <!-- javax.annotation -->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -66,7 +48,6 @@
         </dependency>
 
         <!-- Spring Framework -->
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -76,22 +57,5 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-
-        <!-- Testing -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-        </dependency>
     </dependencies>
-
 </project>
