@@ -9,7 +9,7 @@
    <dependency>
        <groupId>com.huitongjy.elasticjob.spring</groupId>
        <artifactId>elastic-job-lite-spring-context</artifactId>
-       <version>${LAST_RELEASE_VERSION}</version>
+       <version>1.0.0</version>
    </dependency>
    ````
   - 创建自己的任务 <br/>
@@ -54,11 +54,11 @@
    可以在根据环境配置来分别配置，同时也兼容ElasticJob原有的`Java API`与`XML`配置。
   ````
     elastic.job.lite.config.zookeeper.id=regCenter
-    elastic.job.lite.config.zookeeper.server-lists=${dubbo.registry.address}
+    elastic.job.lite.config.zookeeper.server-lists=localhost:2181
     elastic.job.lite.config.zookeeper.namespace=exambase-elastic-job-dev
     elastic.job.lite.config.zookeeper.base-sleep-time-milliseconds=1000
     elastic.job.lite.config.zookeeper.max-sleep-time-milliseconds=3000
     elastic.job.lite.config.zookeeper.max-retries=3
   ````
   
-  - 引入本项目同时兼容ElasticJob原来的任何用法。 既`Java API`与`XML`配置可以与注解方式共存。
+  - 引入本项目同时兼容ElasticJob原来的特性与用法。 既`Java API`与`XML`配置可以与`Annotation`方式共存。
