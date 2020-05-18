@@ -9,7 +9,7 @@
    <dependency>
        <groupId>com.huitongjy.elasticjob.spring</groupId>
        <artifactId>elastic-job-lite-spring-context</artifactId>
-       <version>${LAST_RELEASE_VERSION}</version>
+       <version>1.0.0</version>
    </dependency>
    ````
   - 创建自己的任务 <br/>
@@ -61,4 +61,4 @@
     elastic.job.lite.config.zookeeper.max-retries=3
   ````
   
-  - 引入本项目同时兼容ElasticJob原来的任何用法。 既`Java API`与`XML`配置可以与注解方式共存。
+  - 引入本项目同时兼容ElasticJob原来的特性与用法。 既`Java API`与`XML`配置可以与`Annotation`方式共存。
