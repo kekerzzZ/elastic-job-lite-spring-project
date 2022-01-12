@@ -40,7 +40,7 @@
         <!-- Elastic Job Lite -->
         <elastic-job-lite.version>2.1.5</elastic-job-lite.version>
         <!-- Spring -->
-        <spring.framework.version>5.2.5.RELEASE</spring.framework.version>
+        <spring.framework.version>5.3.14</spring.framework.version>
         <!-- javax -->
         <lombok.version>1.18.12</lombok.version>
     </properties>
